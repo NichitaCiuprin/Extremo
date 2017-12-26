@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: 733c5104a7f3f8045a0d92e9535d7e00
+timeCreated: 1511349196
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sparkl_0
+    21300002: sparkl_1
+    21300004: sparkl_2
+    21300006: sparkl_3
+    21300008: sparkl_4
+    21300010: sparkl_5
+    21300012: sparkl_6
+    21300014: sparkl_7
+    21300016: sparkl_8
+    21300018: sparkl_9
+    21300020: sparkl_10
+    21300022: sparkl_11
+    21300024: sparkl_12
+    21300026: sparkl_13
+    21300028: sparkl_14
+    21300030: sparkl_15
+    21300032: sparkl_16
+    21300034: sparkl_17
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sparkl_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 172
+        width: 15
+        height: 19
+      alignment: 9
+      pivot: {x: 0.38665468, y: 0.5298277}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 176
+        width: 15
+        height: 17
+      alignment: 9
+      pivot: {x: 0.5944547, y: 0.35831764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 175
+        width: 24
+        height: 16
+      alignment: 9
+      pivot: {x: 0.49999967, y: 0.44686985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_3
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 141
+        width: 26
+        height: 14
+      alignment: 9
+      pivot: {x: 0.47275352, y: 0.5910819}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_4
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 139
+        width: 26
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_5
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 139
+        width: 23
+        height: 22
+      alignment: 9
+      pivot: {x: 0.45687932, y: 0.46779978}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 105
+        width: 20
+        height: 25
+      alignment: 9
+      pivot: {x: 0.5107128, y: 0.4614337}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_7
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 102
+        width: 26
+        height: 29
+      alignment: 9
+      pivot: {x: 0.39699203, y: 0.4963058}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 104
+        width: 25
+        height: 25
+      alignment: 9
+      pivot: {x: 0.49142975, y: 0.504285}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_9
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 72
+        width: 27
+        height: 24
+      alignment: 9
+      pivot: {x: 0.48578906, y: 0.4786838}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_10
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 73
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_11
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 73
+        width: 29
+        height: 24
+      alignment: 9
+      pivot: {x: 0.48294702, y: 0.46802554}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 39
+        width: 27
+        height: 25
+      alignment: 9
+      pivot: {x: 0.458197, y: 0.4887131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_13
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 41
+        width: 17
+        height: 20
+      alignment: 9
+      pivot: {x: 0.4834018, y: 0.44356555}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_14
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 40
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_15
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 5
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_16
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 4
+        width: 29
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: sparkl_17
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 4
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

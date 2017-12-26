@@ -1,0 +1,259 @@
+fileFormatVersion: 2
+guid: a04645e40470cf34187c594f487e60c4
+timeCreated: 1509266976
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Idle_0
+    21300002: Idle_1
+    21300004: Frow_0
+    21300006: Frow_1
+    21300008: Frow_2
+    21300010: Death_By_Sword_0
+    21300012: Death_By_Sword_1
+    21300014: Death_By_Sword_2
+    21300016: Death_By_Spear_0
+    21300018: Death_By_Spear_1
+    21300020: Death_By_Spear_3
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 30
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idle_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 897
+        width: 100
+        height: 126
+      alignment: 9
+      pivot: {x: 0.5898631, y: 0.032666888}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Idle_1
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 896
+        width: 109
+        height: 127
+      alignment: 9
+      pivot: {x: 0.5932911, y: 0.040070783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Frow_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 754
+        width: 132
+        height: 126
+      alignment: 9
+      pivot: {x: 0.6827361, y: 0.064572774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Frow_1
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 753
+        width: 128
+        height: 133
+      alignment: 9
+      pivot: {x: 0.56281555, y: 0.057263367}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Frow_2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 754
+        width: 172
+        height: 134
+      alignment: 9
+      pivot: {x: 0.4367548, y: 0.064096935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Sword_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 588
+        width: 147
+        height: 140
+      alignment: 9
+      pivot: {x: 0.58069587, y: 0.085760936}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Sword_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 591
+        width: 135
+        height: 132
+      alignment: 9
+      pivot: {x: 0.39504552, y: 0.07064033}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Sword_2
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 589
+        width: 141
+        height: 118
+      alignment: 9
+      pivot: {x: 0.42989182, y: 0.13418993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Spear_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 414
+        width: 203
+        height: 164
+      alignment: 9
+      pivot: {x: 0.4133441, y: 0.07834495}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Spear_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 414
+        width: 199
+        height: 165
+      alignment: 9
+      pivot: {x: 0.38264441, y: 0.09009122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Death_By_Spear_3
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 417
+        width: 139
+        height: 153
+      alignment: 9
+      pivot: {x: 0.4105387, y: 0.06983559}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

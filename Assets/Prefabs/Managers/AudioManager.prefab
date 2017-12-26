@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1184229609485764}
+  m_IsPrefabParent: 1
+--- !u!1 &1184229609485764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4652257016584548}
+  - component: {fileID: 114741005028247464}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4652257016584548
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184229609485764}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.425224, y: 0.16271858, z: -2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114741005028247464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184229609485764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d858250b63f653e49b5c789f0711269b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isKillVolume: 0
+  sound_death_death: {fileID: 1758916110020426, guid: 51f02a65b5a31514c9c8ce60b9c93b55,
+    type: 2}
+  sound_death_deflect: {fileID: 1758916110020426, guid: 5ff4e1455a1f63c49a52df29293cdfaa,
+    type: 2}
+  sound_death_tierd: {fileID: 1758916110020426, guid: 825971b4d6392bb4ba363245bb47f456,
+    type: 2}
+  sound_knight_death_byAxe: {fileID: 1758916110020426, guid: 980be70e8ecf83a4699c370544c46d3a,
+    type: 2}
+  sound_knight_death_bySpear: {fileID: 1758916110020426, guid: 80380b25fc10a3445bc812231f63129a,
+    type: 2}
+  sound_viking_death_bySword: {fileID: 1758916110020426, guid: 640c2399325001b4dae05d81f92dde5c,
+    type: 2}
+  sound_viking_death_bySpear: {fileID: 1758916110020426, guid: 38d2f0ef7eff4d74aa14b93a3f7185d1,
+    type: 2}
+  sound_samurai_death_bySword: {fileID: 1758916110020426, guid: 71471ed389adac045af8ee9524b1a422,
+    type: 2}
+  sound_samurai_death_byAxe: {fileID: 1758916110020426, guid: 9e2e72fbab0ba7f4baebb85c1eb1f409,
+    type: 2}
+  sound_weaopn_collision: {fileID: 1758916110020426, guid: 52fa247e15870a74cb8f9858355e3ae6,
+    type: 2}
+  sound_button: {fileID: 1758916110020426, guid: 4a320bd91db03374683e6d814b908c4a,
+    type: 2}
+  musicInScene: {fileID: 0}
+  music_startMenu: {fileID: 1758916110020426, guid: 08cd4818ab6e9de448d3101c93f598b7,
+    type: 2}
+  music_level: {fileID: 1758916110020426, guid: 1aa2431646e8c624d90eef8b0c91795f,
+    type: 2}
