@@ -36,6 +36,12 @@ public class TutorialManager : MonoBehaviour
         isBlockInput = true;
         StartCoroutine(Tutorial());
     }
+    
+    private IEnumerator Click()
+    {
+//        if (isClick)
+            	
+    }
     private IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(2.5f);
