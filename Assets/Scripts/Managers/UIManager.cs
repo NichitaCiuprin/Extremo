@@ -5,49 +5,39 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-
     public GameObject startMenu;
     public GameObject playerDeadMenu;
     public GameObject gameHood;
 
-    private FadeInOut startMenuFadeInOut;
-
     public void Awake()
     {
         instance = this;
-        startMenuFadeInOut = startMenu.GetComponent<FadeInOut>();
     }
     public void Start()
     {
         ShowStartMenu();
         HidePlayerDeadMenu();
     }
-
-    public void OnButtonStartGame()
+    public void OnButton_StartGame()
     {
-        StartCoroutine(StartGame_Coroutine());
+        StartCoroutine(OnButtonStartGame_Coroutine());
     }
-    public void OnButtonTutorial()
+    public void OnButton_Tutorial()
     {
-        StartCoroutine(StartGame_Coroutine());
-        TutorialManager.instance.StartTutorial();
+        StartCoroutine(OnButtonTutorial_Coroutine());
     }
-    public void OnButtonExitLevel()
+    public void OnButton_ExitLevel()
     {
-        StartCoroutine(Exit_Coroutine());
+        StartCoroutine(OnButtonExitLevel_Coroutine());
     }
-    public void OnButtonRestart()
+    public void OnButton_Restart()
     {
-        DeathManager.instance.ReviveDeathInScene();
-        RhythmManager.instance.Restart();
-        ScoreManager.instance.ResetScore();
-        HidePlayerDeadMenu();
-        AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
+        StartCoroutine(OnButtonRestart_Coroutine());
     }
-    public void OnButtonExitGame()
+    public void OnButton_ExitGame()
     {
-        AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
-        Application.Quit();
+        StartCoroutine(OnButtonExitGame_Coroutine());
+        
     }
     public void ShowStartMenu()
     {
@@ -76,20 +66,26 @@ public class UIManager : MonoBehaviour
         gameHood.GetComponent<FadeInOut>().ForseFadeOut();
     }
 
-    private IEnumerator StartGame_Coroutine()
+    private IEnumerator OnButtonStartGame_Coroutine()
     {
         HideStartMenu();
-        GameManager.instance.SpawnVortex();
         AudioManager.instance.KillAllAudio();
         AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
-        DeathManager.instance.CreateDeathInScene();
         yield return new WaitForSeconds(1f);
-        ShowGameHood();
-        WorldsManager.instance.CreateEnemysInScene();
-        WorldsManager.instance.EnableWorldInPool();
-        RhythmManager.instance.StartRhythm();
+        GameManager.instance.StartGame();
+        yield return null;
     }
-    private IEnumerator Exit_Coroutine()
+    private IEnumerator OnButtonTutorial_Coroutine()
+    {
+        HideStartMenu();
+        AudioManager.instance.KillAllAudio();
+        AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
+        yield return new WaitForSeconds(1f);
+        GameManager.instance.StartGame();
+        TutorialManager.instance.StartTutorial();
+        yield return null;
+    }
+    private IEnumerator OnButtonExitLevel_Coroutine()
     {
         RhythmManager.instance.Exit();
         GameManager.instance.DestroyVotrex();
@@ -106,5 +102,21 @@ public class UIManager : MonoBehaviour
         WeaponManager.instance.ClearWeaponPool();
         AudioManager.instance.PlaySound(AudioManager.instance.music_startMenu);
         ScoreManager.instance.ResetScore();
+        yield return null;
+    }
+    private IEnumerator OnButtonRestart_Coroutine()
+    {
+        DeathManager.instance.ReviveDeathInScene();
+        RhythmManager.instance.Restart();
+        ScoreManager.instance.ResetScore();
+        HidePlayerDeadMenu();
+        AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
+        yield return null;
+    }
+    private IEnumerator OnButtonExitGame_Coroutine()
+    {
+        AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
+        Application.Quit();
+        yield return null;
     }
 }

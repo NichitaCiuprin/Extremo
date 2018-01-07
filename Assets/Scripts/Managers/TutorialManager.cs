@@ -37,10 +37,9 @@ public class TutorialManager : MonoBehaviour
         StartCoroutine(Tutorial());
     }
     
-    private IEnumerator Click()
+    private IEnumerator Click1()
     {
-//        if (isClick)
-            	
+        yield return null;
     }
     private IEnumerator Tutorial()
     {
@@ -319,11 +318,13 @@ public class TutorialManager : MonoBehaviour
             isSwipeUp = false;
             yield return null;
         }
-        UIManager.instance.OnButtonExitLevel();
+        UIManager.instance.OnButton_ExitLevel();
         //UIManager.instance.playerDeadMenu.SetActive(false);
         click.SetActive(false);
         Time.timeScale = 1;
         isBlockInput = false;
         frame8.SetActive(false);
     }
+    //onTutorialClick
+    //
 }

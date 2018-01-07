@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
         Screen.orientation = ScreenOrientation.LandscapeLeft;
         AudioManager.instance.PlaySound(AudioManager.instance.music_startMenu);
     }
+
+    public void StartGame()
+    {
+        StartCoroutine(StartGame_Coroutine());
+    }
     public void SpawnVortex()
     {
         vortexInScene = Instantiate(vortex);
@@ -23,4 +28,19 @@ public class GameManager : MonoBehaviour
     {
         Destroy(vortexInScene);
     }
+
+    public IEnumerator StartGame_Coroutine()
+    {
+        GameManager.instance.SpawnVortex();
+        DeathManager.instance.CreateDeathInScene();
+        yield return new WaitForSeconds(1f);
+        UIManager.instance.ShowGameHood();
+        WorldsManager.instance.CreateEnemysInScene();
+        WorldsManager.instance.EnableWorldInPool();
+        RhythmManager.instance.StartRhythm();
+        yield return null;
+    }
+
+    
+    
 }
