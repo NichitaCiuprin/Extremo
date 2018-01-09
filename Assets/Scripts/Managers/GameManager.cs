@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         Destroy(vortexInScene);
     }
 
-    public IEnumerator StartGame_Coroutine()
+    private IEnumerator StartGame_Coroutine()
     {
         GameManager.instance.SpawnVortex();
         DeathManager.instance.CreateDeathInScene();

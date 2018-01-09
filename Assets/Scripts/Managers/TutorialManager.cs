@@ -5,14 +5,7 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance;
-    public bool isBlockInput = false;
-    public bool isClick = false;
-    public bool isSwipeRight = false;
-    public bool isSwipeLeft = false;
-    public bool isSwipeUp = false;
-    public GameObject left;
-    public GameObject up;
-    public GameObject right;
+
     public GameObject frame1;
     public GameObject frame2;
     public GameObject frame3;
@@ -21,77 +14,60 @@ public class TutorialManager : MonoBehaviour
     public GameObject frame6;
     public GameObject frame7;
     public GameObject frame8;
-    public GameObject click;
 
     public void Awake()
     {
         instance = this;
     }
-    public void Click()
-    {
-        isClick = true;
-    }
     public void StartTutorial()
     {
-        isBlockInput = true;
+        InputKeyboardManager.instance.SetActiveInput(false);
         StartCoroutine(Tutorial());
     }
     
-    private IEnumerator Click1()
+    private bool isWasCLick()
     {
-        yield return null;
+        if (isClick)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
+
     private IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(2.5f);
         Time.timeScale = 0;
         frame1.SetActive(true);
         click.SetActive(true);
-        while (true)
+        while (!isWasCLick())
         {
-            if (isClick)
-            {
-                isClick = false;
-                break;
-            }
-            isSwipeRight = false;
-            isSwipeLeft = false;
-            isSwipeUp = false;
             yield return null;
         }
         frame2.SetActive(true);
-        while (true)
+        while (!isWasCLick())
         {
-            if (isClick)
-            {
-                isClick = false;
-                break;
-            }
-            isSwipeRight = false;
-            isSwipeLeft = false;
-            isSwipeUp = false;
             yield return null;
         }
         click.SetActive(false);
-        frame1.SetActive(false);
         frame2.SetActive(false);
-        frame3.SetActive(false);
         Time.timeScale = 1;
         yield return new WaitForSeconds(2.2f);
         Time.timeScale = 0;
         frame3.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
-            isSwipeLeft = false;
-            isSwipeUp = false;
             if (isSwipeRight)
             {
                 Time.timeScale = 1;
                 frame3.SetActive(false);
                 isSwipeRight = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -118,7 +94,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
         frame5.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -129,7 +105,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 frame5.SetActive(false);
                 isSwipeLeft = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -153,7 +129,7 @@ public class TutorialManager : MonoBehaviour
         click.SetActive(false);
         frame6.SetActive(false);
         right.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -164,7 +140,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 right.SetActive(false);
                 isSwipeRight = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -172,7 +148,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Time.timeScale = 0;
         up.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -183,7 +159,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 up.SetActive(false);
                 isSwipeUp = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -191,7 +167,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Time.timeScale = 0;
         up.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -202,7 +178,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 up.SetActive(false);
                 isSwipeUp = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -210,7 +186,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
         up.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -221,7 +197,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 up.SetActive(false);
                 isSwipeUp = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -229,7 +205,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Time.timeScale = 0;
         left.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -240,7 +216,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 left.SetActive(false);
                 isSwipeLeft = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -248,7 +224,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
         up.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -259,7 +235,7 @@ public class TutorialManager : MonoBehaviour
                 Time.timeScale = 1;
                 up.SetActive(false);
                 isSwipeUp = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -286,7 +262,7 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         Time.timeScale = 0;
         right.SetActive(true);
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         while (true)
         {
             isClick = false;
@@ -296,7 +272,7 @@ public class TutorialManager : MonoBehaviour
             {
                 right.SetActive(false);
                 isSwipeRight = false;
-                isBlockInput = true;
+                InputKeyboardManager.instance.SetActiveInput(false);
                 break;
             }
             yield return null;
@@ -322,7 +298,7 @@ public class TutorialManager : MonoBehaviour
         //UIManager.instance.playerDeadMenu.SetActive(false);
         click.SetActive(false);
         Time.timeScale = 1;
-        isBlockInput = false;
+        InputKeyboardManager.instance.SetActiveInput(true);
         frame8.SetActive(false);
     }
     //onTutorialClick
