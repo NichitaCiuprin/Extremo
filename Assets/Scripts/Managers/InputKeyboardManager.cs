@@ -5,41 +5,40 @@ using UnityEngine;
 public class InputKeyboardManager : MonoBehaviour
 {
     public static InputKeyboardManager instance;
-    private bool isDisableInput;
-
+    public bool isInputKeyboardActive;
+    public bool isControllDeath;
+    public bool isControllDeath_LeftArrow;
+    public bool isControllDeath_RightArrow;
+    public bool isControllDeath_UpArrow;
     public void Awake()
     {
         instance = this;
-        isDisableInput = false;
+        isInputKeyboardActive = true;
+        isControllDeath = true;
     }
     public void Update()
     {
-        Death deathInScene = DeathManager.instance.deathInScene;
-        bool isControlDeath = !(deathInScene == null || deathInScene.state == Death.State.dead);
-        if (isDisableInput) return;
-        if (!isControlDeath) return;
+        if (isInputKeyboardActive) return;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            DeathManager.instance.deathInScene.Left();
-            TutorialManager.instance.isSwipeLeft = true;
+            if (isControllDeath)
+            {
+                DeathManager.instance.deathInScene?.DeflectLeft();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            DeathManager.instance.deathInScene.Up();
-            TutorialManager.instance.isSwipeUp = true;
+            if (isControllDeath)
+            {
+                DeathManager.instance.deathInScene?.DeflectUp();
+            }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            DeathManager.instance.deathInScene.Right();
-            TutorialManager.instance.isSwipeRight = true;
+            if (isControllDeath)
+            {
+                DeathManager.instance.deathInScene?.DeflectRight();
+            }
         }
-    }
-    public void SetActiveInput(bool isActive)
-    {
-        isDisableInput = isActive;    
-    }
-    public bool IsInputActive()
-    {
-        return isDisableInput;
     }
 }

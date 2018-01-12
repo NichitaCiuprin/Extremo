@@ -41,20 +41,21 @@ public class Death : MonoBehaviour
         sound_death_tierd = null;
     }
 
-    public void Left()
+    public void DeflectLeft()
     {
         animator.SetTrigger("Deflect");
         state = State.deflect;
         deflectDirection = DeflectDirection.left;
     }
-    public void Right()
+    public void DeflectRight()
     {
         animator.SetTrigger("Deflect");
         state = State.deflect;
         deflectDirection = DeflectDirection.right;
     }
-    public void Up()
+    public void DeflectUp()
     {
+        if (this.state == State.dead) return;
         animator.SetTrigger("Deflect");
         state = State.deflect;
         deflectDirection = DeflectDirection.up;
