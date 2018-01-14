@@ -5,11 +5,13 @@ using UnityEngine;
 public class InputKeyboardManager : MonoBehaviour
 {
     public static InputKeyboardManager instance;
+
     public bool isInputKeyboardActive;
     public bool isControllDeath;
     public bool isControllDeath_LeftArrow;
     public bool isControllDeath_RightArrow;
     public bool isControllDeath_UpArrow;
+
     public void Awake()
     {
         instance = this;
@@ -18,26 +20,29 @@ public class InputKeyboardManager : MonoBehaviour
     }
     public void Update()
     {
-        if (isInputKeyboardActive) return;
+        if (!isInputKeyboardActive) return;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (isControllDeath)
             {
-                DeathManager.instance.deathInScene?.DeflectLeft();
+                if(DeathManager.instance.deathInScene != null)
+                    DeathManager.instance.deathInScene.DeflectLeft();
             }
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             if (isControllDeath)
             {
-                DeathManager.instance.deathInScene?.DeflectUp();
+                if (DeathManager.instance.deathInScene != null)
+                    DeathManager.instance.deathInScene.DeflectUp();
             }
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (isControllDeath)
             {
-                DeathManager.instance.deathInScene?.DeflectRight();
+                if (DeathManager.instance.deathInScene != null)
+                    DeathManager.instance.deathInScene.DeflectRight();
             }
         }
     }

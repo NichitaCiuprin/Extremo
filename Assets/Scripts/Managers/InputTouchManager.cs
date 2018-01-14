@@ -71,7 +71,7 @@ public class InputTouchManager : MonoBehaviour
             if (angle > 135 && angle < 180 || angle < -90 && angle > -180)
             {
                 //Death controll
-                DeathManager.instance.deathInScene?.DeflectLeft();
+                DeathManager.instance.deathInScene.DeflectLeft();
                 //input
                 isWasSwipeLeftInFrame = true;
             }
@@ -79,7 +79,7 @@ public class InputTouchManager : MonoBehaviour
             else if (angle > 0 && angle < 45 || angle < 0 && angle > -90)
             {
                 //Death controll
-                DeathManager.instance.deathInScene?.DeflectRight();
+                DeathManager.instance.deathInScene.DeflectRight();
                 //input
                 isWasSwipeRightInFrame = true;
             }
@@ -87,7 +87,7 @@ public class InputTouchManager : MonoBehaviour
             else
             {
                 //Death controll
-                DeathManager.instance.deathInScene?.DeflectUp();
+                DeathManager.instance.deathInScene.DeflectUp();
                 //input
                 isWasSwipeUpInFrame = true;
             }

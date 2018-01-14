@@ -43,12 +43,14 @@ public class Death : MonoBehaviour
 
     public void DeflectLeft()
     {
+        if (this.state == State.dead) return;
         animator.SetTrigger("Deflect");
         state = State.deflect;
         deflectDirection = DeflectDirection.left;
     }
     public void DeflectRight()
     {
+        if (this.state == State.dead) return;
         animator.SetTrigger("Deflect");
         state = State.deflect;
         deflectDirection = DeflectDirection.right;

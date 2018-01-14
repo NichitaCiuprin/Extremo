@@ -388,9 +388,9 @@ public class RhythmManager : MonoBehaviour
     private IEnumerator ShowRestartUI()
     {
         yield return new WaitForSeconds(1f);
-        if (UIManager.instance != null)
+        if (GUIManager.instance != null)
         {
-            UIManager.instance.ShowPlayerDeadMenu();
+            GUIManager.instance.ShowPlayerDeadMenu();
         }
     }
 }

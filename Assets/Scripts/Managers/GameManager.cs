@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         GameManager.instance.SpawnVortex();
         DeathManager.instance.CreateDeathInScene();
         yield return new WaitForSeconds(1f);
-        UIManager.instance.ShowGameHood();
+        GUIManager.instance.ShowGameHood();
         WorldsManager.instance.CreateEnemysInScene();
         WorldsManager.instance.EnableWorldInPool();
         RhythmManager.instance.StartRhythm();

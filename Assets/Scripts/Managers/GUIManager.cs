@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UIManager : MonoBehaviour
+public class GUIManager : MonoBehaviour
 {
-    public static UIManager instance;
+    public static GUIManager instance;
+
     public GameObject startMenu;
     public GameObject playerDeadMenu;
     public GameObject gameHood;
+
+    public GameObject resetButton;
 
     public void Awake()
     {
@@ -18,6 +22,7 @@ public class UIManager : MonoBehaviour
         ShowStartMenu();
         HidePlayerDeadMenu();
     }
+
     public void OnButton_StartGame()
     {
         StartCoroutine(OnButtonStartGame_Coroutine());
@@ -39,33 +44,6 @@ public class UIManager : MonoBehaviour
         StartCoroutine(OnButtonExitGame_Coroutine());
         
     }
-    public void ShowStartMenu()
-    {
-        startMenu.SetActive(true);
-    }
-    public void HideStartMenu()
-    {
-        if(startMenu.activeInHierarchy)
-            startMenu.GetComponent<FadeInOut>().ForseFadeOut();
-    }
-    public void ShowPlayerDeadMenu()
-    {
-        playerDeadMenu.SetActive(true);
-    }
-    public void HidePlayerDeadMenu()
-    {
-        if(playerDeadMenu.activeInHierarchy)
-            playerDeadMenu.GetComponent<FadeInOut>().FadeOut();
-    }
-    public void ShowGameHood()
-    {
-        gameHood.SetActive(true);
-    }
-    public void HideGameHood()
-    {
-        gameHood.GetComponent<FadeInOut>().ForseFadeOut();
-    }
-
     private IEnumerator OnButtonStartGame_Coroutine()
     {
         HideStartMenu();
@@ -119,4 +97,34 @@ public class UIManager : MonoBehaviour
         Application.Quit();
         yield return null;
     }
+
+    public void ShowStartMenu()
+    {
+        startMenu.SetActive(true);
+    }
+    public void HideStartMenu()
+    {
+        if(startMenu.activeInHierarchy)
+            startMenu.GetComponent<FadeInOut>().ForseFadeOut();
+    }
+    public void ShowPlayerDeadMenu()
+    {
+        playerDeadMenu.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(resetButton);
+    }
+    public void HidePlayerDeadMenu()
+    {
+        if(playerDeadMenu.activeInHierarchy)
+            playerDeadMenu.GetComponent<FadeInOut>().FadeOut();
+    }
+    public void ShowGameHood()
+    {
+        gameHood.SetActive(true);
+    }
+    public void HideGameHood()
+    {
+        gameHood.GetComponent<FadeInOut>().ForseFadeOut();
+    }
+
+    
 }
