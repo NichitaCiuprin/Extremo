@@ -11,7 +11,6 @@ public class WorldsManager : MonoBehaviour {
     private bool isWorldWhereCreated;
     private GameObject lastEnabledWorld;
 
-
     private void Awake()
     {
         instance = this;
@@ -48,7 +47,6 @@ public class WorldsManager : MonoBehaviour {
             var newEnemy = Instantiate(prefabs_Worlds[i]);
             woldsInScene[i] = newEnemy;
             newEnemy.SetActive(false);
-            //Utility.FreezeGameObject
             newEnemy.transform.parent = worldsPool.transform;
         }
         isWorldWhereCreated = true;

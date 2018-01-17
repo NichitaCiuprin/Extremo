@@ -42,7 +42,6 @@ public class GUIManager : MonoBehaviour
     public void OnButton_ExitGame()
     {
         StartCoroutine(OnButtonExitGame_Coroutine());
-        
     }
     private IEnumerator OnButtonStartGame_Coroutine()
     {
@@ -65,21 +64,13 @@ public class GUIManager : MonoBehaviour
     }
     private IEnumerator OnButtonExitLevel_Coroutine()
     {
-        RhythmManager.instance.Exit();
-        GameManager.instance.DestroyVotrex();
+        GameManager.instance.Exitlevel();
         AudioManager.instance.PlaySound(AudioManager.instance.sound_button);
         HidePlayerDeadMenu();
         yield return new WaitForSeconds(1f);
-        WeaponManager.instance.FadeOutWeapons();
-        HideGameHood();
-        WorldsManager.instance.HideWorldsInScene();
-        DeathManager.instance.DestroyDeathInScene();
-        AudioManager.instance.KillAllAudio();
         ShowStartMenu();
         yield return new WaitForSeconds(1f);
-        WeaponManager.instance.ClearWeaponPool();
         AudioManager.instance.PlaySound(AudioManager.instance.music_startMenu);
-        ScoreManager.instance.ResetScore();
         yield return null;
     }
     private IEnumerator OnButtonRestart_Coroutine()

@@ -5,153 +5,119 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance;
-
-    [HideInInspector]
-    public bool isWasTutorialClick;
-
-    public GameObject frame1;
-    public GameObject frame2;
-    public GameObject frame3;
-    public GameObject frame4;
-    public GameObject frame5;
-    public GameObject frame6;
-    public GameObject frame7;
-    public GameObject frame8;
-    public GameObject frame9;
-    public GameObject frame10;
-    public GameObject frame11;
-    public GameObject frame12;
+    public GameObject[] tutorialSteps;
+    private bool isMoveNextInTutorial;
 
     public void Awake()
     {
         instance = this;
-        isWasTutorialClick = false;
+        isMoveNextInTutorial = false;
     }
     public void LateUpdate()
     {
-        this.isWasTutorialClick = false;
+        this.isMoveNextInTutorial = false;
     }
     public void StartTutorial()
     {
-        InputKeyboardManager.instance.isInputKeyboardActive = false;
-        StartCoroutine(Tutorial());
+        StartCoroutine(StartTutorial_coroutine());
     }
-    public void OnTutorialButton()
+    public void MoveNextInTutorial()
     {
-        this.isWasTutorialClick = true;
+        this.isMoveNextInTutorial = true;
     }
-    private IEnumerator Tutorial()
-    {
-        InputKeyboardManager inputKeyboardManager = InputKeyboardManager.instance;
-        yield return new WaitForSeconds(2.5f);
 
-        HideFrames();
-        ShowFrame(frame1);
-        while (!isWasTutorialClick)
+    private IEnumerator StartTutorial_coroutine()
+    {
+        StartCoroutine(ShowTutorialStep(2.5f, tutorialSteps[0]));
+        while (!isMoveNextInTutorial)
             yield return null;
         yield return null;
 
-        HideFrames();
-        ShowFrame(frame2);
-        while (!isWasTutorialClick)
-            yield return null;
-
-        HideFrames();
-        yield return new WaitForSeconds(2.3f);
-        ShowFrame(frame3);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.RightArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1.5f);
-        ShowFrame(frame4);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.LeftArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1.5f);
-        ShowFrame(frame5);
-        while (!isWasTutorialClick)
-            yield return null;
-
-        HideFrames();
-        ShowFrame(frame6);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.RightArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1f);
-        ShowFrame(frame7);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.UpArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1.5f);
-        ShowFrame(frame8);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.UpArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(0.5f);
-        ShowFrame(frame9);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.RightArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1.5f);
-        ShowFrame(frame10);
-        inputKeyboardManager.isInputKeyboardActive = true;
-        while (!Input.GetKeyDown(KeyCode.LeftArrow))
-            yield return null;
-        inputKeyboardManager.isInputKeyboardActive = false;
-
-        HideFrames();
-        yield return new WaitForSeconds(1.5f);
-        ShowFrame(frame11);
-        while (!isWasTutorialClick)
+        StartCoroutine(ShowTutorialStep(0f, tutorialSteps[1]));
+        while (!isMoveNextInTutorial)
             yield return null;
         yield return null;
 
-        HideFrames();
-        yield return new WaitForSeconds(2.3f);
-        ShowFrame(frame12);
-        while (!isWasTutorialClick)
+        StartCoroutine(ShowTutorialStep(2.3f, tutorialSteps[2]));
+        InputKeyboardManager.instance.isControll_RightArrow = true;
+        while (!isMoveNextInTutorial)
             yield return null;
+        yield return null;
+        
+        StartCoroutine(ShowTutorialStep(1.5f, tutorialSteps[3]));
+        InputKeyboardManager.instance.isControll_LeftArrow = true;
+        while (!isMoveNextInTutorial)
+            yield return null;
+        yield return null;
 
-        HideFrames();
+        StartCoroutine(ShowTutorialStep(1.5f, tutorialSteps[4]));
+        while (!isMoveNextInTutorial)
+            yield return null;
+        yield return null;
 
+        StartCoroutine(ShowTutorialStep(0f, tutorialSteps[5]));
+        InputKeyboardManager.instance.isControll_RightArrow = true;
+        while (!Input.GetKeyDown(KeyCode.RightArrow))
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(1f, tutorialSteps[6]));
+        InputKeyboardManager.instance.isControll_UpArrow = true;
+        while (!Input.GetKeyDown(KeyCode.UpArrow))
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(1.5f, tutorialSteps[7]));
+        InputKeyboardManager.instance.isControll_UpArrow = true;
+        while (!Input.GetKeyDown(KeyCode.UpArrow))
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(0.5f, tutorialSteps[8]));
+        InputKeyboardManager.instance.isControll_RightArrow = true;
+        while (!Input.GetKeyDown(KeyCode.RightArrow))
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(1.5f, tutorialSteps[9]));
+        InputKeyboardManager.instance.isControll_LeftArrow = true;
+        while (!Input.GetKeyDown(KeyCode.LeftArrow))
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(1.5f, tutorialSteps[10]));
+        while (!isMoveNextInTutorial)
+            yield return null;
+        yield return null;
+
+        StartCoroutine(ShowTutorialStep(2.3f, tutorialSteps[11]));
+        while (!isMoveNextInTutorial)
+            yield return null;
+        yield return null;
+
+        GameManager.instance.Exitlevel();
     }
-    private void ShowFrame(GameObject frameToShow)
+    private IEnumerator ShowTutorialStep(float timeBeforeShowStep, GameObject stepToShow)
     {
+        InputKeyboardManager.instance.isControll_LeftArrow = false;
+        InputKeyboardManager.instance.isControll_RightArrow = false;
+        InputKeyboardManager.instance.isControll_UpArrow = false;
+        yield return new WaitForSeconds(timeBeforeShowStep);
+        foreach (var step in tutorialSteps)
+        {
+            step.SetActive(false);
+        }
         Time.timeScale = 0;
-        frameToShow.SetActive(true);
-    }
-    private void HideFrames()
-    {
+        stepToShow.SetActive(true);
+        InputKeyboardManager.instance.isInputKeyboardActive = true;
+        while (!isMoveNextInTutorial)
+        {
+            yield return null;
+        }
+        yield return null;
+        InputKeyboardManager.instance.isInputKeyboardActive = false;
         Time.timeScale = 1;
-        frame1.SetActive(false);
-        frame2.SetActive(false);
-        frame3.SetActive(false);
-        frame4.SetActive(false);
-        frame5.SetActive(false);
-        frame6.SetActive(false);
-        frame7.SetActive(false);
-        frame8.SetActive(false);
-        frame9.SetActive(false);
-        frame10.SetActive(false);
-        frame11.SetActive(false);
-        frame12.SetActive(false);
+        stepToShow.SetActive(false);
     }
 }
+

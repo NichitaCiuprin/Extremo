@@ -25,6 +25,7 @@ public class DeathManager : MonoBehaviour
     }
     public void DestroyDeathInScene()
     {
+        //DeathManager.instance.deathInScene.
         Destroy(deathInScene.gameObject);
     }
     public void ReviveDeathInScene()

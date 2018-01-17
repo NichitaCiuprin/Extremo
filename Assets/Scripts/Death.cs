@@ -24,10 +24,7 @@ public class Death : MonoBehaviour
     public State state;
 
     private Animator animator;
-    private FadeInOut fadeInOut;
-    private int trigersDuringDeflect;
-    private GameObject sound_death_idle;
-    private GameObject sound_death_tierd;
+    public FadeInOut fadeInOut;
 
     public void Awake()
     {
@@ -36,9 +33,7 @@ public class Death : MonoBehaviour
 
         animator = GetComponent<Animator>();
         fadeInOut = GetComponent<FadeInOut>();
-        trigersDuringDeflect = 0;
-        sound_death_idle = null;
-        sound_death_tierd = null;
+        fadeInOut.isDestroyOnFadeOut = true;
     }
 
     public void DeflectLeft()
@@ -84,7 +79,7 @@ public class Death : MonoBehaviour
     public void ToTierdState()
     {
         this.state = Death.State.tierd;
-        sound_death_tierd = AudioManager.instance.PlaySound(AudioManager.instance.sound_death_tierd);
+        AudioManager.instance.PlaySound(AudioManager.instance.sound_death_tierd);
     }
     public void Die()
     {

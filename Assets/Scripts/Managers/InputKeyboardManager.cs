@@ -7,43 +7,56 @@ public class InputKeyboardManager : MonoBehaviour
     public static InputKeyboardManager instance;
 
     public bool isInputKeyboardActive;
-    public bool isControllDeath;
-    public bool isControllDeath_LeftArrow;
-    public bool isControllDeath_RightArrow;
-    public bool isControllDeath_UpArrow;
+
+    public bool isControll_LeftArrow;
+    public bool isControll_RightArrow;
+    public bool isControll_UpArrow;
 
     public void Awake()
     {
         instance = this;
         isInputKeyboardActive = true;
-        isControllDeath = true;
     }
     public void Update()
     {
-        if (!isInputKeyboardActive) return;
+        if (!isInputKeyboardActive)
+            return;
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            if (isControllDeath)
-            {
-                if(DeathManager.instance.deathInScene != null)
-                    DeathManager.instance.deathInScene.DeflectLeft();
-            }
+            OnLeftArrow();
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (isControllDeath)
-            {
-                if (DeathManager.instance.deathInScene != null)
-                    DeathManager.instance.deathInScene.DeflectUp();
-            }
+            OnUpArrow();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if (isControllDeath)
-            {
-                if (DeathManager.instance.deathInScene != null)
-                    DeathManager.instance.deathInScene.DeflectRight();
-            }
+            OnRightArrow();
         }
+    }
+     
+    private void OnUpArrow()
+    {
+        if (!isControll_UpArrow)
+            return;
+        if (DeathManager.instance.deathInScene != null)
+            DeathManager.instance.deathInScene.DeflectUp();
+        TutorialManager.instance.MoveNextInTutorial();
+    }
+    private void OnLeftArrow()
+    {
+        if (!isControll_LeftArrow)
+            return;
+        if (DeathManager.instance.deathInScene != null)
+            DeathManager.instance.deathInScene.DeflectLeft();
+        TutorialManager.instance.MoveNextInTutorial();
+    }
+    private void OnRightArrow()
+    {
+        if (!isControll_RightArrow)
+            return;
+        if (DeathManager.instance.deathInScene != null)
+            DeathManager.instance.deathInScene.DeflectRight();
+        TutorialManager.instance.MoveNextInTutorial();
     }
 }

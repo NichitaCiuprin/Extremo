@@ -9,6 +9,7 @@ public class FadeInOut : MonoBehaviour
 {
     public bool isFadeInOnEnable = true;
     public bool isDisableOnFadeOut = true;
+    public bool isDestroyOnFadeOut = false;
 
     private Renderer[] renderers;
     private MaskableGraphic[] renderersImage;
@@ -24,6 +25,7 @@ public class FadeInOut : MonoBehaviour
         if(isFadeInOnEnable)
             ForseFadeIn();
     }
+
     public void ForseFadeOut()
     {
         fadeTime = maxFadeTime;
@@ -74,11 +76,12 @@ public class FadeInOut : MonoBehaviour
             StartCoroutine(UpdateFadeInImage());
         }
     }
+
     private IEnumerator UpdateFadeOutRenderer()
     {
         while (fadeTime > 0)
         {
-                foreach (Renderer rend in this.renderers)
+            foreach (Renderer rend in this.renderers)
             {
                 newAlphaColor = rend.material.color;
                 newAlphaColor.a = Mathf.Lerp(0, 1, fadeTime);
@@ -98,7 +101,10 @@ public class FadeInOut : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-            
+        else if(isDestroyOnFadeOut)
+        {
+            Destroy(gameObject);
+        }
     }
     private IEnumerator UpdateFadeInRenderer()
     {

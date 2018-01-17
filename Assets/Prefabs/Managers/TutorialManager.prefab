@@ -51,20 +51,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56bba8527be441745a97b65b62f43239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isBlockInput: 0
-  isClick: 0
-  isSwipeRight: 0
-  isSwipeLeft: 0
-  isSwipeUp: 0
-  left: {fileID: 0}
-  up: {fileID: 0}
-  right: {fileID: 0}
-  frame1: {fileID: 0}
-  frame2: {fileID: 0}
-  frame3: {fileID: 0}
-  frame4: {fileID: 0}
-  frame5: {fileID: 0}
-  frame6: {fileID: 0}
-  frame7: {fileID: 0}
-  frame8: {fileID: 0}
-  click: {fileID: 0}
+  steps:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

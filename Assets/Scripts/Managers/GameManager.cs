@@ -20,15 +20,6 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(StartGame_Coroutine());
     }
-    public void SpawnVortex()
-    {
-        vortexInScene = Instantiate(vortex);
-    }
-    public void DestroyVotrex()
-    {
-        Destroy(vortexInScene);
-    }
-
     private IEnumerator StartGame_Coroutine()
     {
         GameManager.instance.SpawnVortex();
@@ -41,6 +32,36 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
+    public void Exitlevel()
+    {
+        StartCoroutine(ExitLevel_Coroutine());
+    }
+    private IEnumerator ExitLevel_Coroutine()
+    {
+        RhythmManager.instance.Exit();
+        GameManager.instance.DestroyVortex();
+        //yield return new WaitForSeconds(1f);
+        WeaponManager.instance.FadeOutWeapons();
+        GUIManager.instance.HideGameHood();
+        WeaponManager.instance.FadeOutWeapons();
+        WorldsManager.instance.HideWorldsInScene();
+        DeathManager.instance.DestroyDeathInScene();
+        AudioManager.instance.KillAllAudio();
+        yield return new WaitForSeconds(1f);
+        WeaponManager.instance.ClearWeaponPool();
+        ScoreManager.instance.ResetScore();
+    }
+
+    public void SpawnVortex()
+    {
+        vortexInScene = Instantiate(vortex);
+    }
+    public void DestroyVortex()
+    {
+        Destroy(vortexInScene);
+    }
+
+    
     
     
 }

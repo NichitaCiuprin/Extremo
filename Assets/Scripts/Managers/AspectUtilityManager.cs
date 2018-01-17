@@ -7,53 +7,9 @@ using UnityEngine.UI;
 
 public class AspectUtilityManager : MonoBehaviour
 {
-
-    public float _wantedAspectRatio = 1.3333333f;
-    static float wantedAspectRatio;
-    static Camera cam;
+    static float wantedAspectRatio = 1.777f;
+    static Camera cam = null;
     static Camera backgroundCam;
-    bool isFullScreenLastFrame = false;
-
-    void Awake()
-    {
-        //Debug.Log("Unity Editor");
-
-        //cam = GetComponent<Camera>();
-        //if (!cam)
-        //{
-        //    cam = Camera.main;
-        //}
-        //if (!cam)
-        //{
-        //    Debug.LogError("No camera available");
-        //    return;
-        //}
-        //wantedAspectRatio = _wantedAspectRatio;
-        //SetCamera();
-        //Debug.Log("Unity Editor");
-
-        //cam = GetComponent<Camera>();
-        //if (!cam)
-        //{
-        //    cam = Camera.main;
-        //}
-        //if (!cam)
-        //{
-        //    Debug.LogError("No camera available");
-        //    return;
-        //}
-        //wantedAspectRatio = _wantedAspectRatio;
-        //SetCamera();
-    }
-
-    public void Update()
-    {
-        //if (isFullScreenLastFrame != Screen.fullScreen)
-        //{
-        //    StartCoroutine(SetCamera_Coroutine());
-        //}
-        //isFullScreenLastFrame = Screen.fullScreen;
-    }
 
     public IEnumerator SetCamera_Coroutine()
     {
